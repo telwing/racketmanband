@@ -46,6 +46,14 @@
         z-index: 2;
       }
       
+      @media (max-width: 45em) {
+        .header {
+          justify-content: center;
+          height: 12em;
+          flex-wrap: wrap;
+        }
+      }
+      
       .logo {
         color: transparent;
         background-image: url(RacketMan-WebLogo-White-01.png);
@@ -70,9 +78,16 @@
         width: 100%;
         padding-left: 1em;
       }
+      
+      @media (max-width: 45em) {
+        .nav {
+          padding-left: 0;
+          text-align: center;
+        }
+      }
 
       .nav > a {
-        margin-left: 2em;
+        margin: 0 1em;
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
@@ -189,6 +204,7 @@
         <nav class="nav">
           <a href="#music" title="Music">Music</a>
           <a href="#shows" title="Shows">Shows</a>
+          <a href="#" title="Shop">Shop</a>
           <!-- <a href="#press">Press</a> -->
         </nav>
         <div class="social-links">
