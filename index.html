@@ -20,10 +20,12 @@
         font-size: 17px;
         line-height: 1.4;
         background-color: #121212;
+        color: #fff;
+        margin: 0;
       }
       
       .container {
-        width: 69em;
+        width: 100%;
         max-width: 100%;
         margin: 0 auto;
       }
@@ -33,7 +35,7 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 69em;
+        width: 100%;
         max-width: 100%;
         display: flex;
         align-items: center;
@@ -65,12 +67,12 @@
       
       .nav {
         width: 100%;
-        padding-left: 3em;
+        padding-left: 1em;
       }
 
       .nav > a {
         margin-left: 2em;
-        color: #fff;
+        color: inherit;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1.125em;
@@ -104,18 +106,19 @@
         position: relative;
       }
 
-      .video-embed {
+      .video-embed > video {
         position: absolute;
-        width: 112%;
-        height: 100%;
-        top: 0;
-        left: -6%;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: -50%;
         bottom: 0;
         right: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translate(-50%, -50%);
       }
 
       .video-embed iframe {
@@ -125,9 +128,14 @@
 
       .section-music {
         background-color: #e1af26;
+        background-image: url(RacketMan-SpotifyBanner-03.jpg);
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
         display: flex;
         flex-direction: column;
-        align-items: space-around;
+        align-items: center;
         justify-content: center;
         flex-wrap: nowrap;
         padding: 6em 0;
@@ -154,6 +162,11 @@
         align-items: center;
         justify-content: center;
         background-color: #fd87ab;
+        background-image: url(RacketMan-LiveShot-01.png);
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
       }
 
       .shows-embed {
@@ -187,7 +200,11 @@
       <main class="content">
         <section id="home" class="section section-home">
           <div class="video-embed">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_nSSDRc7q_I?rel=0&controls=0&showinfo=0&autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <video autoplay loop muted poster="racket-man-bg-loop.jpg">
+              <source src="racket-man-bg-loop.mp4" type="video/mp4">
+              <source src="racket-man-bg-loop.webm" type="video/webm">
+              <source src="racket-man-bg-loop.ogv" type="video/ogg">
+            </video>
           </div>
         </section>
         <section id="music" class="section section-music">
@@ -206,7 +223,7 @@
         <section id="shows" class="section section-shows">
           <h2 class="section-heading">Shows</h2>
           <div class="shows-embed">
-            <a href="https://www.songkick.com/artists/9609629" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent"></a>
+            <a href="https://www.songkick.com/artists/9609629" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-font-color="#ffffff" data-background-color="transparent"></a>
             <script src="//widget.songkick.com/9609629/widget.js"></script>
           </div>
         </section>
