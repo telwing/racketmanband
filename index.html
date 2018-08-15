@@ -162,15 +162,27 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+      }
+      
+      @media (max-width: 45em) {
+        .section-music .section-content {
+          flex-wrap: wrap;
+        }
       }
 
       .music-embed {
         width: 50%;
         max-width: 100%;
-        min-width: 26em;
+        min-width: 17em;
         padding: 0 5em;
         flex: 0 50%;
+      }
+      
+      @media (max-width: 45em) {
+        .music-embed {
+          padding: 0;
+        }
       }
 
       .section-shows {
