@@ -48,16 +48,17 @@
       
       @media (max-width: 45em) {
         .header {
-          padding: 0 0 3em;
+          padding: 0;
           justify-content: center;
           height: 12em;
           flex-wrap: wrap;
-          transition: .25s transform;
-          will-change: transform;
+          transition: .25s transform, .25s background-color;
+          will-change: transform, background-color;
         }
         
         .header:not(.headroom--top) {
-          background: linear-gradient(rgba(0,0,0,.8) 80%, transparent);
+          background-color: rgba(0,0,0,.8);
+          padding-bottom: 1em;
         }
         
         .headroom--unpinned {
