@@ -175,7 +175,7 @@
         width: 50%;
         max-width: 100%;
         min-width: 17em;
-        padding: 0 5em;
+        padding: 0 6em;
         flex: 0 50%;
       }
       
@@ -196,15 +196,22 @@
         background-position: center;
         background-blend-mode: multiply;
         background-attachment: fixed;
+        padding: 6em 0;
       }
 
       .shows-embed {
         width: 50%;
         max-width: 100%;
-        min-width: 26em;
-        padding: 0 5em;
+        min-width: 17em;
+        padding: 0 6em;
       }
-
+      
+      @media (max-width: 45em) {
+        .shows-embed {
+          padding: 0;
+        }
+      }
+      
       .section-press {
         background-color: #ecfa02;
       }
