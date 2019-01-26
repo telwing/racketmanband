@@ -322,17 +322,54 @@
     </div>
     <script src="lib/tingle.min.js"></script>
     <script>
-      ;(function(tingle) {
+      ;(function (root, factory) {
+        root.youtube = factory()
+      })(this, function () {
         'use strict';
         
+        var instance = {
+          player: null
+          insertApiScript: insertApiScript,
+          init: init
+        }
+        
+        instance.insertApiScript()
+        
+        return instance
+        
+        function insertApiScript () {
+          var tag = document.createElement('script')
+          tag.src = 'https://www.youtube.com/iframe_api'
+          var firstScriptTag = document.getElementsByTagName('script')[0]
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+        }
+        
+        function init (id, config) {
+          instance.player = new YT.Player(id, config || {})
+        }
+      })
+      
+      function onYouTubeIframeAPIReady () {
+        youtube.init('brunswick-boaties-video')
+      }
+      
+      ;(function(youtube, tingle) {
+        'use strict';
+
         var config = {
           footer: false,
           stickyFooter: false,
           closeMethods: ['overlay', 'button', 'escape'],
-          closeLabel: 'Close'
+          closeLabel: 'Close',
+          onOpen: function () {
+            youtube.player.playVideo()
+          },
+          onClose: function () {
+            youtube.player.pauseVideo()
+          }
         }
         var modal = new tingle.modal(config)
-        var videoHtml = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UlpocPNIRGU?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        var videoHtml = '<iframe id="brunswick-boaties-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/UlpocPNIRGU?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         
         modal.setContent(videoHtml)
         
@@ -343,7 +380,7 @@
           modal.open()
           return false
         })
-      })(window.tingle || {})
+      })(window.youtube || {}, window.tingle || {})
     </script>
     <script>
       /*!
