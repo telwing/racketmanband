@@ -160,6 +160,21 @@
         height: 100%; 
       }
       
+      .iframe-embed {
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+      }
+      
+      .iframe-embed iframe {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      
       .play-btn {
         position: absolute;
         top: 50%;
@@ -369,7 +384,9 @@
           }
         }
         var modal = new tingle.modal(config)
-        var videoHtml = '<iframe id="brunswick-boaties-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/UlpocPNIRGU?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        var videoHtml = '<div class="iframe-embed">'
+          +'<iframe id="brunswick-boaties-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/UlpocPNIRGU?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          +'</div>'
         
         modal.setContent(videoHtml)
         
