@@ -382,10 +382,10 @@
           closeMethods: ['overlay', 'button', 'escape'],
           closeLabel: 'Close',
           onOpen: function () {
-            youtube.player.playVideo()
+            youtube.player && youtube.player.playVideo()
           },
           onClose: function () {
-            youtube.player.pauseVideo()
+            youtube.player && youtube.player.pauseVideo()
           }
         }
         var modal = new tingle.modal(config)
