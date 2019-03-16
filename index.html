@@ -304,10 +304,10 @@
       <main class="content">
         <section id="home" class="section section-home">
           <div class="video-embed">
-            <video autoplay loop muted poster="racket-man-bg-loop.jpg">
-              <source src="racket-man-bg-loop.mp4" type="video/mp4">
-              <source src="racket-man-bg-loop.webm" type="video/webm">
-              <source src="racket-man-bg-loop.ogv" type="video/ogg">
+            <video autoplay loop muted poster="scaredformore-loop.jpg">
+              <source src="scaredformore-loop.mp4" type="video/mp4">
+              <source src="scaredformore-loop.webm" type="video/webm">
+              <source src="scaredformore-loop.ogv" type="video/ogg">
             </video>
             <button type="button" class="play-btn" id="playBtn"></button>
           </div>
@@ -370,7 +370,7 @@
       })
       
       function onYouTubeIframeAPIReady () {
-        youtube.init('brunswick-boaties-video')
+        youtube.init('scaredformore-video')
       }
       
       ;(function(youtube, tingle) {
@@ -390,7 +390,7 @@
         }
         var modal = new tingle.modal(config)
         var videoHtml = '<div class="iframe-embed">'
-          +'<iframe id="brunswick-boaties-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/UlpocPNIRGU?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+          +'<iframe id="scaredformore-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/n8_dX7DkiFU?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
           +'</div>'
         
         modal.setContent(videoHtml)
