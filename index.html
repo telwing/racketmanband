@@ -404,11 +404,13 @@
         
         var playBtn = document.getElementById('playBtn')
         
-        playBtn.addEventListener('click', function (e) {
-          e.preventDefault()
-          modal.open()
-          return false
-        })
+        if (playBtn) {
+          playBtn.addEventListener('click', function (e) {
+            e.preventDefault()
+            modal.open()
+            return false
+          })
+        }
       })(window.youtube || {}, window.tingle || {})
     </script>
     <script>
