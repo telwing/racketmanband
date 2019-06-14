@@ -43,23 +43,24 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        height: 6em;
+        height: 4em;
         padding: 0 2em;
         z-index: 2;
+        background-color: rgba(0, 0, 0, .7);
       }
       
       @media (max-width: 45em) {
         .header {
           padding: 0;
           justify-content: center;
-          height: 12em;
+          height: 10em;
           flex-wrap: wrap;
           transition: .25s transform, .25s background-color;
           will-change: transform, background-color;
         }
         
         .header:not(.headroom--top) {
-          background-color: rgba(0,0,0,.8);
+          background-color: rgba(0,0,0,.7);
           padding-bottom: 1em;
         }
         
@@ -144,7 +145,7 @@
         width: 100%;
         min-height: 100vh;
         background-image: url(FrontSeat-Art-FINAL-min.jpg);
-        background-position: center;
+        background-position: center 3rem;
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: contain;
@@ -153,6 +154,7 @@
       @media (max-width: 45em) {
         .hero {
           background-size: cover;
+          background-position: center 10rem;
         }
       }
 
